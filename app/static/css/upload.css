@@ -1,0 +1,58 @@
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height: 100%;
+}
+
+.card {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+    border-width: 0;
+    transition: all .2s;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.card-header:first-child {
+    border-radius: 10px;
+}
+
+.card-header {
+
+    align-items: center;
+    border-bottom-width: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0.625rem;
+    height: 3.5rem;
+    background-color: #fff
+}
+
+
+.card-header.card-header-tab .card-header-title {
+    display: flex;
+    align-items: center;
+    white-space: nowrap
+}
+
+.card-header .header-icon {
+    font-size: 1.65rem;
+    margin-right: 0.625rem
+}
+
+
+
+.uploadgroup{
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color:#fff;
+    
+}
+
+.form-group.sub{
+    padding-bottom: 40px;
+}
+.btn-primary{
+    background-color:#9ac8e2;
+    border-color:#9ac8e2
+}

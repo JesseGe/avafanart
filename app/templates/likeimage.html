@@ -1,0 +1,58 @@
+<div class="container-fluid pt20 pb10 desktop-limit">
+    <div class="stitle mb70">
+        <h2>二创图片</h2>
+    </div>
+    {% if images %}
+    <div id="nav3" class="row">
+        {% for image in images%}
+        {% if image %}
+        <div class="col-md-3 col-sm-4 col-xs-6" data-wow-delay="0.1s">
+            <a href={{image.image_url}} target="_blank">
+                <div class="service-item">
+                    <div class="serv-icon-fix">
+                        <img class="logo-size logo-scale" src={{image.image}} alt="">
+
+                        <p class="mt10 name-text">{{image.image_name}}</p>
+                    </div>
+                    <div class="serv-content">
+                        <p class="desc-content"></p>
+                    </div>
+                    <a class="picowner" href={{image.up_url}} target="_blank">
+                        <div tabindex="0" aria-describedby="el-popper-2098" class="updiv">
+                            <div class="el-image">
+                                <img class="el-image__inner"
+                                    src={{image.up_avatar}}>
+                                <!--v-if-->
+                            </div> 
+                            {{image.up_name}}
+                        </div>
+                    </a>
+                    {% if username %}
+                    <a class="likechoose" href="javascript:void(0);" onclick="LikeiRefresh('/likeimage/{{image.image_id}}')" title="点击收藏">
+                    {% else %}
+                    <a class="likechoose" href= "login" title="请先登录以收藏">
+                    {% endif %}
+                        {% set vars = {'foo': True} %}
+                        {% for likei in likeimage %}
+                            {% if image.image_id == likei.image_id %}
+                            {% if vars.update({'foo': Flase}) %} {% endif %}
+                            <button class="border-0 btn-transition btn1 btn-outline-like"> <i class="fa fa-star" aria-hidden="true"></i></button>
+                            
+                            {{i}}
+                            {% endif %}
+                        {% endfor %}
+                        {% if vars.foo %}
+                            <button class="border-0 btn-transition btn1 btn-outline-nolike"> <i class="fa fa-star-o" aria-hidden="true"></i></button>
+                        {% endif %}
+                        {{i}}
+                    </a>
+                </div>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <h5>还没有上传图片哦</h5>
+    {% endif %}
+</div>

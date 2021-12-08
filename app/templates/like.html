@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="intro-section" id="home">
+    <div class="intro-content">
+        <div class="background-shadow2 linear-grad">
+            <a href="https://space.bilibili.com/703007996" target="_blank">A-SOUL 1周年快乐~</a>
+        </div>
+    </div>
+</section>
+<main class="main-warp">
+    <section class="service-section" id="navigation-1">
+        <div class="container-fluid pt20 pb10 desktop-limit">
+            <div class="stitle mb70">
+                <h2>二创视频</h2>
+            </div>
+            {% if vedios %}
+            <div id="nav2" class="row">
+                {% for vedio in vedios%}
+                {% if vedio %}
+                <div class="col-md-3 col-sm-4 col-xs-6" data-wow-delay="0.1s">
+                    <a href={{vedio.vedio_url}} target="_blank">
+                        <div class="service-item">
+                            <div class="serv-icon-fix">
+                                <img class="logo-size logo-scale" src={{vedio.vedio}} alt="">
+                                <p class="mt10 name-text">{{vedio.vedio_name}}</p>
+                            </div>
+                            <div class="serv-content">
+                                <p class="desc-content"></p>
+                            </div>
+                            
+                            <a class="picowner" href={{vedio.up}} target="_blank">
+                                <div tabindex="0" aria-describedby="el-popper-2098" class="updiv">
+                                    <div class="el-image">
+                                        <img class="el-image__inner"
+                                            src={{vedio.up_avatar}}>
+                                        <!--v-if-->
+                                    </div> 
+                                    {{vedio.up_name}}
+                                </div>
+                            </a>
+                            <a class="likechoose" href="javascript:void(0);" onclick="LikevRefresh('/dv/{{vedio.vedio_id}}')" >
+                                <button class="border-0 btn-transition btn1 btn-outline-delete"> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% else %}
+            <h5>还没有收藏的视频哦</h5>
+            {% endif %}
+        </div>
+    </section>
+    <section class="service-section" id="navigation-2">
+        <div class="container-fluid pt20 pb10 desktop-limit">
+            <div class="stitle mb70">
+                <h2>二创图片</h2>
+            </div>
+            {% if images %}
+            <div id="nav3" class="row">
+                {% for image in images%}
+                {% if image %}
+                <div class="col-md-3 col-sm-4 col-xs-6" data-wow-delay="0.1s">
+                    <a href={{image.image_url}} target="_blank">
+                        <div class="service-item">
+                            <div class="serv-icon-fix">
+                                <img class="logo-size logo-scale" src={{image.image}} alt="">
+
+                                <p class="mt10 name-text">{{image.image_name}}</p>
+                            </div>
+                            <div class="serv-content">
+                                <p class="desc-content"></p>
+                            </div>
+                            <a class="picowner" href={{image.up_url}} target="_blank">
+                                <div tabindex="0" aria-describedby="el-popper-2098" class="updiv">
+                                    <div class="el-image">
+                                        <img class="el-image__inner"
+                                            src={{image.up_avatar}}>
+                                        <!--v-if-->
+                                    </div> 
+                                    {{image.up_name}}
+                                </div>
+                            </a>
+                            <a class="likechoose" href="javascript:void(0);" onclick="LikeiRefresh('/di/{{image.image_id}}')" >
+                                <button class="border-0 btn-transition btn1 btn-outline-delete"> <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% else %}
+            <h5>还没有收藏的图片哦</h5>
+            {% endif %}
+        </div>
+    </section>
+</main>
+{% endblock %}
+</main>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+    {% block title %}
+    <title>Register</title>
+    {% endblock %}
+
+
+    {% block content %}
+    <div id="main">
+
+        <div id="avatar">
+        </div>
+        <form action="/register"  method="POST">
+        {{ form.hidden_tag() }}
+        <div id="account">
+            <div class="input-box">{{form.username( maxlength = '64',placeholder="Username")}}</div>
+            <div class="input-box">{{form.email( maxlength = '100',placeholder="Email")}}</div>
+            <div class="input-box">{{form.password( maxlength = '64',minlength = '6',placeholder="Please input password")}}</div>
+            <div class="input-box">{{form.repassword( maxlength = '64',minlength = '6',placeholder="Please input password again")}}</div>
+        </div>
+
+            <div class="input-box"><input class="register-btn" type="submit" value="Register"></div>
+        </form>
+
+        <div id="footer">
+            <a href="login">Already have an account?</a>
+        </div>
+    </div>
+{% endblock %}

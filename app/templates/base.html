@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    {% block title%}
+    {% endblock %}
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ url_for('static',filename='css/index.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='css/login.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='css/upload.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/index.js')}}"></script>
+</head>
+
+<body>
+    {% if username %}
+    <nav class="header-section sticky" id='nav'>
+        <div class="container1">
+            <a href='/'>
+                <h1>向晚 & Fan sart</h1>
+            </a>
+            <div class="menu log">
+                <a href="uploadimage" class="is-active">上传图片</a>
+                <a href="/uploadvedio">上传视频</a>
+                <a href="/showlike">我的收藏</a>
+                <a href="/change">更改密码</a>
+                <a href="/logout">注销</a>
+            </div>
+
+            <button class="hamburger log">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="menu-hide">
+                <li style="--i:1">
+                    <a href="/uploadimage">
+                        上传图片
+                    </a>
+                </li>
+                <li style="--i:2">
+                    <a href="/uploadvedio">
+                        上传视频
+                    </a>
+                </li>
+                <li style="--i:3">
+                    <a href="like">
+                        我的收藏
+                    </a>
+                </li>
+                <li style="--i:4">
+                    <a href='/change'>
+                            更改密码
+                    </a>
+                </li>
+                <li style="--i:5">
+                    <a href="/logout">
+                        注销
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% else %}
+    <nav class="header-section sticky" id='nav'>
+        <div class="container1">
+            <a href='/'>
+                <h1>向晚&fans art</h1>
+            </a>
+
+            <div class="menu">
+                <a href="#navigation-1" class="is-active">视频</a>
+                <a href="#navigation-2">图片</a>
+                <a href="login">登录</a>
+                <a href="register">注册</a>
+            </div>
+
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="menu-hide">
+                <li style="--i:1">
+                    <a href="#navigation-1">
+                        视频
+                    </a>
+                </li>
+                <li style="--i:2">
+                    <a href="#navigation-2">
+                        图片
+                    </a>
+                </li>
+                <li style="--i:3">
+                    <a href="login">
+                        登录
+                    </a>
+                </li>
+                <li style="--i:4">
+                    <a href="register">
+                        注册
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% endif %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+      {% for message in messages %}
+      <div class="alertdiv" id='alert'>
+      <div class="alert alert-warning" >
+        <h3>{{ message }}</h3>  
+        <a href="javascript:void(0);" onclick="alert('/alert')" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      </div>
+    </div>
+      {% endfor %}
+
+    {% endif %}
+  {% endwith %}
+  {% block content %}
+  {% endblock %}
+</body>
+
+</html>

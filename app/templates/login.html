@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+    {% block title %}
+    <title>Login</title>
+    
+    {% endblock %}
+
+
+    {% block content %}
+    <div id="main">
+
+        <div id="avatar">
+        </div>
+        <form action="/login"  method="POST">
+        {{ form.hidden_tag() }}
+        <div id="account">
+            <div class="input-box">{{form.email( maxlength = '100',placeholder="Place input your email")}}</div>
+            <div class="input-box">{{form.password( maxlength = '64',minlength = '6',placeholder="Place input your password")}}</div>
+        </div>
+
+            <div class="input-box"><input class="login-btn" type="submit" value="Sgin in"></div>
+        </form>
+
+        <div id="footer">
+            <a href="#">登录查看我的收藏</a>
+        </div>
+    </div>
+{% endblock %}

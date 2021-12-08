@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Upload Vedio</title>
+{% endblock %}
+{% block content %}
+<div class="row d-flex justify-content-center content">
+    <div class="uploadgroup">
+        <div class="card-hover-shadow-2x mb-3 card">
+            <div class="card-header-tab card-header">
+                <h3>Upload the vedio</h3>            
+            </div>
+            <div class="scroll-area-sm">
+                <perfect-scrollbar class="ps-show-limits">
+
+                    <form action="/uploadvedio" method="POST">
+                        <div class="form_group uploadgroup">
+                            <form>
+                                {{ form.hidden_tag() }}
+                                <div class="form-group">
+                                </div>
+                                <hr>
+                                <div class="form-group">{{form.up( class_='form-control',maxlength = '200',placeholder="Place input up url")}}</div>
+                                <div class="form-group">{{form.up_name( class_='form-control',maxlength = '200',placeholder="Place input up name")}}</div>
+                                <div class="form-group">{{form.vedio_name( class_='form-control',maxlength = '200',placeholder="Place input your vedio name/tag")}}</div>
+                                <div class="form-group">{{form.vedio( class_='form-control',maxlength = '300',placeholder="Place input your vedio avatar url")}}</div>
+                                <div class="form-group">{{form.vedio_url( class_='form-control',maxlength = '300',placeholder="Place input your vedio url")}}</div>
+                                <div class="form-group">{{form.up_avatar( class_='form-control',maxlength = '200',placeholder="Place input your up avatar url")}}</div>
+                                <div class="form-group sub"><input class="btn btn-primary" type="submit" value="Submit"></div>
+                                    <div class="form-group">
+                                    </div>
+                                
+                            </form>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

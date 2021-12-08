@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+    {% block title %}
+    <title>ChangePasswrod</title>
+    {% endblock %}
+    {% block content %}
+    <div id="main">
+
+        <div id="avatar">
+        </div>
+        <form action="/change"  method="POST">
+        {{ form.hidden_tag() }}
+        <div id="account">
+            <div class="input-box">{{form.opassword( maxlength = '64',minlength = '6',placeholder="Please enter your original password")}}</div>
+            <div class="input-box">{{form.password( maxlength = '64',minlength = '6',placeholder="Please enter your new password")}}</div>
+            <div class="input-box">{{form.repassword( maxlength = '64',minlength = '6',placeholder="Please enter your new password again")}}</div>
+        </div>
+
+            <div class="input-box"><input class="register-btn" type="submit" value="Register"></div>
+        </form>
+
+        <div id="footer">
+            <a href="login">Already have an account?</a>
+        </div>
+    </div>
+{% endblock %}

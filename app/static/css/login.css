@@ -1,0 +1,117 @@
+@charset "utf-8";
+/*统一设置*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*网页背景图片*/
+body{
+    background: rgba(255, 255, 255, 0);
+    background-size: cover;
+}
+
+#main{
+    width: 350px;
+    height: 580px;
+    background: rgba(0, 0, 0, 0.726);
+    margin: 120px auto;
+    border-top: 8px solid #9ac8e2;
+    position: relative;
+    border-radius:5px;
+}
+
+/*头像区*/
+#avatar{
+    width: 164px;
+    height: 164px;
+    background: url("../img/avater.png") no-repeat;
+    background-size: cover;
+    margin: 50px auto;
+    border-radius: 50%;
+
+}
+
+/*账号密码区*/
+#account{
+    width: 75%;
+    /*height: 200px;*/
+    /*background: #ffd1e4;*/
+    margin: 0 auto;
+}
+#account .input-box{
+    height: 50px;
+    /*background: #ffbcdd;*/
+}
+#account .input-box input{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    background: rgb(0, 0, 0);
+    border-radius:5px;
+    color: #9ac8e2;
+    font-size: 16px;
+}
+
+/*登录按钮*/
+.login-btn{
+    width: 75%;
+    height: 40px;
+    display: block;
+    margin: 110px auto;
+    background:#9ac8e2 ;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+/*按下按钮*/
+.login-btn:active{
+    position: relative;
+    top:2px;
+}
+
+.register-btn{
+    width: 75%;
+    height: 40px;
+    display: block;
+    margin: 10px auto;
+    background:#9ac8e2 ;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-btn:active{
+    position: relative;
+    top:2px;
+}
+
+/*登陆区底部*/
+#footer{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+#footer a{
+    color: #ccc;
+    text-decoration: none;
+}
+#footer a:hover{
+    color: #9ac8e2;
+}
+@media(max-width: 767px){
+    #main{
+        margin: 60px auto;
+        width:80%;
+    }
+
+}
